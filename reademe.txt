@@ -1,0 +1,68 @@
+由于经常要在家写代码，所以需要有个能够方便访问代码管理工具。最近尝试了一下GitHub。经过了一翻纠结之后，基本上掌握了他的使用方式。 
+要使用GitHub需要首先在其网站上进行注册。其官方网站是https://github.com/。注册的流程在这里就不多少了，大家按照它的提示，一步一步操作就可以了。执行完注册流程之后，需要在本地安装一个git bash，通过这个在控制台完成对代码的管理。 
+首先，我们需要新建一个Repository，并在这个Repository中保存我们的代码。点击首页右侧的New Repository按钮。 
+ 
+，点击之后，页面会提示你输入Repository的名称以及对这个Repository的描述。 
+
+ 
+
+在完成了创建之后，GitHub会提示你如何向这个Repository上传代码。 
+
+
+。 
+这里如果要上传代码，有几个关键步骤： 
+1.
+Java代码  收藏代码
+
+    git init  
+
+这个命令会在当前目录下创建一个.git文件夹。 
+2.
+Java代码  收藏代码
+
+    git add .  
+
+这个命令会把当前路径下的所有文件，添加到待上传的文件列表中。 
+3.
+Java代码  收藏代码
+
+    git commit -m "xxxxx"  
+
+
+  
+Java代码  收藏代码
+
+    git remote add origin git@github.com:xuhongxin/deom.git  
+
+
+  
+Java代码  收藏代码
+
+    git push -u origin master  
+
+
+上述的几条命令会把本地的代码上传的GitHub服务器上。但是，其中几个比较关键的命令，比如commit/remote/origin/master的用法，目前还没弄清，所以，后续还是要在整理一下。 
+
+至此，您已将可以将本地的代上传的GitHub服务器了，这将是我们开始构建远程代码管理的第一步。下一次，将讲解一下，如何通过fork创建属于自己的分支，并对分支进行修改并提交。先写到这里。
+
+在上一篇文章中，我们说明了如何将本地的代码上传的GitHub的代码库中进行保管。在这篇文章中将继续向您介绍，如何从GitHub上将代码下载到本地。 
+在GitHub中通常使用fork操作，来从GitHub上获得代码。 
+首先，进入要下载的项目，并单击fork。 
+
+
+
+接下来需要将这个项目复制到您的本地机器上。通过在GitBash中执行如下的命令可以做到这一点。 
+Java代码  收藏代码
+
+    git clone git@github:username/JavaDemo.git  
+
+
+这里的JavaDemo是已经存在的一个GitHub上的一个Repository。 
+执行该命令的时候，系统会提示你输入密码。输入密码完后，系统将会下载代码到本地。 
+为了保持代码的同步，可以进入目录，执行如下的操作： 
+Java代码  收藏代码
+
+    git remote add upstream git@github.com/username/JavaDemo.git  
+
+
+ok，到这里，代码已经成功下载到本地了。在下一篇文章中，将解释如何进行修改提交。
